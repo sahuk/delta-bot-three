@@ -17,3 +17,10 @@ export const checkCommentForDelta = comment => {
   }
   return false
 }
+
+export const getAuthorReply = ({ comment, author }) => {
+  for (const comment of comment.replies) {
+    if (comment.author.name === author) return comment
+  }
+  return null
+}
